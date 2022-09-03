@@ -3,6 +3,7 @@ package kitchenpos;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
+import kitchenpos.config.profile.Profile;
 import kitchenpos.config.profile.TestProfile;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
 
 import java.sql.SQLException;
 import java.util.Map;
@@ -19,6 +22,7 @@ import java.util.Map;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @Conditional(TestProfile.class)
 @ActiveProfiles(Profile.TEST)
+@Sql("classpath:/db/migration/V1__Initialize_project_tables.sql")
 public class AcceptanceTest {
 
     @Autowired
