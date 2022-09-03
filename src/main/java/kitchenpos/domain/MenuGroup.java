@@ -4,6 +4,16 @@ public class MenuGroup {
     private Long id;
     private String name;
 
+    public MenuGroup() {
+    }
+
+    public MenuGroup(final String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("메뉴 그룹의 이름이 존재해야 합니다.");
+        }
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }
