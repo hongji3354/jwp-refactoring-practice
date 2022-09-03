@@ -18,6 +18,7 @@ import java.util.Map;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @Conditional(TestProfile.class)
+@ActiveProfiles(Profile.TEST)
 public class AcceptanceTest {
 
     @Autowired

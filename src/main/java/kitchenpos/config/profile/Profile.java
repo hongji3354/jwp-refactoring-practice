@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Profile {
 
-    private static final String TEST = "TEST";
+    public static final String TEST = "TEST";
 
     private Profile() {
     }
