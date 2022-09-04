@@ -44,7 +44,7 @@ class MenuGroupAcceptanceTest extends AcceptanceTest {
 
     }
 
-    public ExtractableResponse<Response> 메뉴_그룹_생성을_요청(MenuGroup body) {
+    private ExtractableResponse<Response> 메뉴_그룹_생성을_요청(MenuGroup body) {
         return post("/api/menu-groups", body);
     }
 }
