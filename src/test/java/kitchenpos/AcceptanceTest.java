@@ -41,6 +41,13 @@ public class AcceptanceTest {
         databaseCleanup.truncate();
     }
 
+    protected ExtractableResponse<Response> get(final String url) {
+        return RestAssured.given().log().all()
+                .when().get(url)
+                .then().log().all()
+                .extract();
+    }
+
     protected ExtractableResponse<Response> get(final String url, final Object pathVariable) {
         return RestAssured.given().log().all()
                 .when().get(url, pathVariable)
