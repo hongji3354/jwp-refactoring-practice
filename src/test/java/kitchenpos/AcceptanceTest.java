@@ -32,7 +32,7 @@ public class AcceptanceTest {
     int port;
 
     @BeforeEach
-    void setUp() {
+    void acceptanceTestSetUp() {
         RestAssured.port = port;
     }
 
